@@ -6,8 +6,8 @@ const getEmployees = (list) => {
   return list.map((person) => {
     const employeeName = person.textContent;
     const position = person.dataset.position;
-    const salary = person.dataset.salary;
-    const age = person.dataset.age;
+    const salary = +person.dataset.salary.replace(/[$,]/g, '');
+    const age = +person.dataset.age;
 
     return {
       name: employeeName,
